@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Previsão do Tempo</title>
+</head>
+
+<body>
+    <main>
+        <form action="/mostrarGrafico" method="post">
+            <div id="local">
+                <p>Tempo agora em </p>
+                <p id="cidade"><%= dados.cidade , dados.estado%></p>
+            </div>
+            <div id="temperatura">
+                <img src="https://www.climatempo.com.br/dist/images/v2/svg/<%=dados.img%>.svg"></img>
+                <p id="p-temperatura"><%=dados.temperatura %></p>
+            </div>
+            <div id="condi-sens">
+                <div id="condicao">
+                    <img src="https://www.climatempo.com.br/dist/images/v2/svg/ic-cloud.svg"></img>
+                    <p><%=dados.condicao %></p>
+                </div>        
+                <div id="sensacao">
+                    <img src="https://www.climatempo.com.br/dist/images/v2/svg/ic-sensation.svg"></img>
+                    <p><%=dados.sensacao %></p>
+                </div>
+            </div>
+            <div id="vento">
+                <p>Vento</p>
+                <p><%=dados.vento%> km/h</p>
+            </div>
+            <div id="umidade">
+                <p>Umidade</p>
+                <div id="umidade-direita">
+                    <img src="https://www.climatempo.com.br/dist/images/v2/svg/ic-humidity-max.svg"></img>
+                    <p><%=dados.umidade%> %</p>
+                </div>
+            </div>
+            <input type="hidden" name="idCidade" value="<%=dados.idCidade%>">
+            <input type="hidden" name="temperatura" value="<%=dados.temperatura%>">
+            <input type="hidden" name="umidade" value="<%=dados.umidade%>">
+            <input type="hidden" name="sensacao" value="<%=dados.sensacao%>">
+            <input type="hidden" name="vento" value="<%=dados.vento%>">
+            <input type="hidden" name="condicao" value="<%=dados.condicao%>">
+            <input type="hidden" name="data" value="<%=dados.data%>">
+       <input type="submit" value="Visualizar gráfico">
+        </form>
+    </main>
+</body>
+</html>
