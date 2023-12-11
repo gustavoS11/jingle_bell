@@ -6,6 +6,7 @@ Previsao.prototype.cadastrar = function(idCidade,temperatura,umidade,sensacao,ve
         this._conexao.query(`insert into clima values (null,${idCidade},${temperatura},${umidade},${sensacao},${vento},'${condicao}',now()) `,function(error,result){
             console.log(error)
             resolve(result)
+              
         })
     })
 }
